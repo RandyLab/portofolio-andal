@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+section{
+  height: 100dvh;
+}
