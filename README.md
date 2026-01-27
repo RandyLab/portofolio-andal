@@ -1,4 +1,4 @@
-# ![Web](https://tenor.com/huSn1kZcbvH.gif) Web Portfolio - Randy Andal Bangun
+# <a href="#"><img src="https://media.tenor.com/VWy0UrGD8tsAAAAi/internet-planet-earth.gif" width="70"></a> Web Portfolio - Randy Andal Bangun 
 
 Website portofolio pribadi untuk menampilkan profil, skill, dan project yang pernah saya kerjakan.
 
