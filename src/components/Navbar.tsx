@@ -1,52 +1,92 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import IconUtama from "../assets/icons/icon.svg";
-import IconClose from "../assets/icons/close.svg";
 import IconMenu from "../assets/icons/menu.svg";
+import IconClose from "../assets/icons/close.svg";
+
+const menuItems = [
+	{ path: "/", label: "Home" },
+	{ path: "/about", label: "About" }
+];
 
 export default function Navbar() {
-  return (
-    <nav className="bg-gray-900 text-white px-4 py-3 flex justify-center w-screen">
-      <div className="w-full max-w-4xl flex justify-between items-center">
-        <Link to="/">
-          {/* <img src="../src/assets/icon.png" className="h-8 w-auto" /> */}
-          <img src={IconUtama} className="w-8 h-8" />
-        </Link>
+	const [isOpen, setIsOpen] = useState(false);
 
-        <div className="space-x-4 hidden md:block">
-          <Link to="/" className="hover:text-gray-300">
-            Home
-          </Link>
-          <Link to="/about" className="hover:text-gray-300">
-            About
-          </Link>
-        </div>
+	return (
+		<nav className="bg-gray-900 text-white px-4 py-3 flex justify-center items-center w-screen">
+			<div className="w-full max-w-4xl flex justify-between items-center">
+				{/* Logo */}
+				<NavLink to="/" aria-label="Go to home">
+					<img src={IconUtama} className="w-8 h-8" alt="Logo" />
+				</NavLink>
 
-        <img
-          src={IconMenu}
-          alt="menu"
-          className="md:hidden w-8 h-8 cursor-pointer"
-        />
+				{/* Menu desktop */}
+				<div className="space-x-4 hidden md:flex">
+					{menuItems.map(item => (
+						<NavLink
+							key={item.path}
+							to={item.path}
+							className={({ isActive }) =>
+								isActive
+									? "text-yellow-400 font-semibold"
+									: "hover:text-gray-300"
+							}
+						>
+							{item.label}
+						</NavLink>
+					))}
+				</div>
+				{/* Tombol hamburger */}
+				<button
+					className="md:hidden w-8 h-8"
+					onClick={() => setIsOpen(!isOpen)}
+					aria-label={isOpen ? "Close menu" : "Open menu"}
+				>
+					<img
+						src={isOpen ? IconClose : IconMenu}
+						alt="menu toggle"
+					/>
+				</button>
+			</div>
 
-        <div className="flex absolute bg-gray-800/50 top-0 left-0 w-screen h-screen justify-end">
-          <img
-            src={IconClose}
-            alt="close"
-            className="w-8 h-8 mt-4 p-2 bg-gray-900 cursor-pointer"
-          />
-          <ul className="px-8 py-16 bg-gray-900 space-y-4">
-            <li>
-              <Link to="/" className="hover:text-gray-300">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-gray-300">
-                About
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  );
+			<div
+				className={`
+    fixed inset-0 z-40 bg-black/50 transition-all duration-300
+    ${
+		isOpen
+			? "opacity-100 pointer-events-auto"
+			: "opacity-0 pointer-events-none"
+	}
+  `}
+				onClick={() => setIsOpen(false)}
+			>
+				<div
+					className={`
+      absolute right-0 top-0 h-full w-2/3 bg-gray-900 p-6
+      transform transition-transform duration-300 ease-in-out
+      ${isOpen ? "translate-x-0" : "translate-x-full"}
+    `}
+					onClick={e => e.stopPropagation()}
+				>
+					<ul className="flex flex-col space-y-6 mt-10 text-lg items-center">
+						{menuItems.map(item => (
+							<li key={item.path}>
+								<NavLink
+									to={item.path}
+									className={({ isActive }) =>
+										isActive
+											? "text-yellow-400 font-semibold text-2xl"
+											: "text-white hover:text-gray-300 text-xl"
+									}
+									onClick={() => setIsOpen(false)}
+								>
+									{item.label}
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	);
 }
