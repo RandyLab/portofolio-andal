@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+button {
+	background-color: hsl(215, 27.9%, 16.9%);
+	padding: 0.2rem 0.8rem;
+	border-radius: 0.2rem;
+	color: hsl(218, 10.6%, 64.9%);
+}
