@@ -1,0 +1,13 @@
+import Hero from "./Hero";
+import About from "./About";
+
+export default function Home() {
+	return (
+		<>
+			<div className="max-w-6xl">
+				<Hero />
+				<About />
+			</div>
+		</>
+	);
+}

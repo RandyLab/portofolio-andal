@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Projects() {
   return (
     <div className="text-center py-10">
       <h1 className="text-3xl font-bold">Welcome to My Portfolio</h1>

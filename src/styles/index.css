@@ -1,8 +1,38 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+}
+
+@layer components {
+  .fade-animation {
+    @apply opacity-0 translate-y-6;
+  }
+
+  .fade-animation.is-visible {
+    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+  }
+}
+
+
+section {
+	min-height: 100dvh;
+}
+
 button {
-	background-color: hsl(215, 27.9%, 16.9%);
-	padding: 0.2rem 0.8rem;
-	border-radius: 0.2rem;
-	color: hsl(218, 10.6%, 64.9%);
+	cursor: pointer;
+}
+
+.btn {
+	@apply inline-flex items-center justify-center px-6 py-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 transition;
+	box-shadow: 2px 2px 8px rgba(0, 72, 243, 0.5);
+}
+
+.btn :hover {
+	box-shadow: 4px 4px 15px rgba(0, 72, 243, 0.5);
+}
+
+.judul-footer {
+	@apply mt-4 mb-2 text-2xl font-bold;
+	border-bottom: 1px solid hsl(215, 20.2%, 65.1%);
 }
