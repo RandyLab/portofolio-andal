@@ -4,10 +4,10 @@ import IconLinkedin from "../assets/icons/linkedin_white.svg";
 import IconTiktok from "../assets/icons/tiktok_white.svg";
 import IconGithub from "../assets/icons/github_white.svg";
 
-import { NavLink } from "react-router-dom";import { getMenuItems } from "/src/utils/functions";
+import { NavLink } from "react-router-dom";
+import { getMenuItems } from "/src/utils/functions";
 
 const menuItems = getMenuItems();
-
 
 export default function Footer() {
 	return (
@@ -19,8 +19,8 @@ export default function Footer() {
 				<h3 className="judul-footer">About Me</h3>
 				<div className="ml-2">
 					<p>
-						Saya adalah orang yang sangat tertarik dengan teknologi.
-						Mulai dari Pemrograman, Desain, sampai AI.
+						I enjoy learning how systems work at different levels
+						and continuously improving my engineering skills.
 					</p>
 					<div className="flex gap-2 mt-1">
 						<a href="#">
@@ -68,7 +68,7 @@ export default function Footer() {
 						</li>
 					))}
 				</ul>
-				<p className="text-center pt-8 my-8 border-t-2 border-gray-400">
+				<p className="text-center mt-4 pt-8 py-8 border-t-2 border-gray-400">
 					Copyright © 2026 RandyBgn. All rights reserved.
 				</p>
 			</div>

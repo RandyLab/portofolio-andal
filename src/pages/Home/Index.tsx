@@ -4,7 +4,7 @@ import About from "./About";
 export default function Home() {
 	return (
 		<>
-			<div className="max-w-6xl">
+			<div>
 				<Hero />
 				<About />
 			</div>

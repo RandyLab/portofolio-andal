@@ -12,35 +12,41 @@ export default function Hero() {
 		>
 			<div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 				<div className="space-y-6 text-center md:text-left order-2 md:order-1">
-					<div ref={triggerRef} >
-					<div
-						className={`fade-animation ${visible ? "is-visible" : ""}`}
-					>
-						<div>
-							<p className="text-4xl md:text-5xl font-bold text-gray-200">
-								Randy Andal Bangun
-							</p>
-							<p className="mt-2 text-2xl md:text-3xl font-semibold text-gray-400">
-								Web Developer
+					<div ref={triggerRef}>
+						<div
+							className={`fade-animation ${visible ? "is-visible" : ""}`}
+						>
+							<div>
+								<p className="text-4xl md:text-5xl font-bold text-gray-200">
+									Randy Andal Bangun
+								</p>
+								<p className="mt-2 text-2xl md:text-3xl font-semibold text-gray-400">
+									Software Engineer
+								</p>
+							</div>
+
+							<p className="text-lg md:text-xl text-gray-300 italic min-h-[2rem]">
+								<Typewriter
+									words={[
+										"Build modern web experiences.",
+										"Vite + React + Tailwind.",
+										"Fast. Clean. Scalable.",
+										"Python",
+										"Java",
+										"C++",
+										"JavaScript",
+										"TypeScript"
+									]}
+									loop={0}
+									cursor
+									cursorStyle="|"
+									typeSpeed={80}
+									deleteSpeed={30}
+									delaySpeed={1500}
+								/>
 							</p>
 						</div>
-
-						<p className="text-lg md:text-xl text-gray-300 italic min-h-[2rem]">
-							<Typewriter
-								words={[
-									"Build modern web experiences.",
-									"Fast. Clean. Scalable.",
-									"Vite + React + Tailwind."
-								]}
-								loop={0}
-								cursor
-								cursorStyle="|"
-								typeSpeed={80}
-								deleteSpeed={30}
-								delaySpeed={1500}
-							/>
-						</p>
-					</div></div>
+					</div>
 					<div className="flex justify-center md:justify-start gap-4 pt-4">
 						<a href="#about" className="btn">
 							About Me

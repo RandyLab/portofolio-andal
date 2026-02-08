@@ -5,18 +5,18 @@ html {
 }
 
 @layer components {
-  .fade-animation {
-    @apply opacity-0 translate-y-6;
-  }
+	.fade-animation {
+		@apply opacity-0 translate-y-6;
+	}
 
-  .fade-animation.is-visible {
-    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
-  }
+	.fade-animation.is-visible {
+		@apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+	}
 }
-
 
 section {
 	min-height: 100dvh;
+	@apply max-w-4xl;
 }
 
 button {
