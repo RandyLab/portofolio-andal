@@ -28,6 +28,10 @@ button {
 	box-shadow: 2px 2px 8px rgba(0, 72, 243, 0.5);
 }
 
+.container-languages img {
+	width: 5rem;
+}
+
 .btn :hover {
 	box-shadow: 4px 4px 15px rgba(0, 72, 243, 0.5);
 }

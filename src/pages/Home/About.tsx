@@ -46,7 +46,7 @@ export default function About() {
 					</div>
 				</div>
 
-				<div className="space-y-24">
+				<div className="space-y-24 px-8 text-justify">
 					<div className="grid md:grid-cols-2 gap-12 items-center">
 						<img
 							src={reactIcon}
@@ -68,73 +68,59 @@ export default function About() {
 					<div className="grid md:grid-cols-2 gap-12 items-center">
 						<div className="space-y-4 md:order-1 order-2">
 							<h4 className="text-2xl font-semibold">
-								Engineering Principles
+								Problem Solving Approach
 							</h4>
-							<ul className="space-y-3 text-gray-300 list-disc list-inside">
-								<li>
-									<strong>Clean & Maintainable Code</strong> —
-									readable, structured, and extensible.
-								</li>
-								<li>
-									<strong>Performance Awareness</strong> —
-									considered from the start.
-								</li>
-								<li>
-									<strong>Scalable Design</strong> — built
-									with future growth in mind.
-								</li>
-								<li>
-									<strong>Industry Best Practices</strong> —
-									proven workflows and patterns.
-								</li>
-							</ul>
+							<p className="text-gray-300">
+								I approach problems by understanding the real
+								requirements, designing a clear solution, and
+								implementing it with clean and efficient code.
+							</p>
 						</div>
 
 						<img
 							src={reactIcon}
-							alt="Principles illustration"
+							alt="Problem solving illustration"
 							className="w-40 mx-auto opacity-80 md:order-2 order-1"
 						/>
 					</div>
-<div className="grid md:grid-cols-2 gap-12 items-center">
-	<img
-		src={reactIcon}
-		alt="Skills illustration"
-		className="w-40 mx-auto opacity-80"
-	/>
-
-	<div className="space-y-4">
-		<h4 className="text-2xl font-semibold">Skills</h4>
-		<p className="text-gray-300">
-			<strong>Languages:</strong> JavaScript, TypeScript
-			<br />
-			<strong>Systems:</strong> Web applications, APIs, automation
-			tools
-			<br />
-			<strong>Practices:</strong> Modular architecture, refactoring,
-			version control
-		</p>
-	</div>
-</div>
-					
 					<div className="grid md:grid-cols-2 gap-12 items-center">
-	<div className="space-y-4 md:order-1 order-2">
-		<h4 className="text-2xl font-semibold">
-			Problem Solving Approach
-		</h4>
-		<p className="text-gray-300">
-			I approach problems by understanding the real requirements,
-			designing a clear solution, and implementing it with clean and
-			efficient code.
-		</p>
-	</div>
-
-	<img
-		src={reactIcon}
-		alt="Problem solving illustration"
-		className="w-40 mx-auto opacity-80 md:order-2 order-1"
-	/>
-</div>
+						<img
+							src={reactIcon}
+							alt="Principles illustration"
+							className="w-40 mx-auto opacity-80"
+						/>
+						<div className="space-y-4">
+							<h4 className="text-2xl font-semibold">
+								Engineering Principles
+							</h4>
+							<ul className="space-y-3 text-gray-300">
+								<li>
+									<strong className="text-left">
+										Clean & Maintainable Code
+									</strong>
+									<p>readable, structured, and extensible.</p>
+								</li>
+								<li>
+									<strong className>
+										Performance Awareness
+									</strong>
+									<p>considered from the start.</p>
+								</li>
+								<li>
+									<strong className="text-left">
+										Scalable Design
+									</strong>{" "}
+									<p>built with future growth in mind.</p>
+								</li>
+								<li>
+									<strong className="text-left">
+										Industry Best Practices
+									</strong>
+									<p>proven workflows and patterns.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

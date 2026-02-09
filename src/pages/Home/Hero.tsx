@@ -17,7 +17,7 @@ export default function Hero() {
 							className={`fade-animation ${visible ? "is-visible" : ""}`}
 						>
 							<div>
-								<p className="text-4xl md:text-5xl font-bold text-gray-200">
+								<p className="text-4xl md:text-5xl font-bold text-gray-200 whitespace-nowrap">
 									Randy Andal Bangun
 								</p>
 								<p className="mt-2 text-2xl md:text-3xl font-semibold text-gray-400">

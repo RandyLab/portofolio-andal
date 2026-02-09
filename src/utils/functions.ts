@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 export function getMenuItems() {
 	const menuItems = [
 		{ path: "/", label: "Home" },
-		{ path: "/projects", label: "Projects" }
+		{ path: "/projects", label: "Projects" },
+		{ path: "/skills", label: "Skills" }
 	];
 	return menuItems;
 }
