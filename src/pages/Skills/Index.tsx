@@ -1,59 +1,112 @@
 // src/pages/Skills/Index.tsx
 import SkillGroup from "../../components/SkillGroup";
+import { motion } from "framer-motion";
 
 export default function Skills() {
-  return (
-    <section className="min-h-screen mt-6 py-12 px-8">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-semibold text-gray-900 mb-4">Skills</h2>
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.2 } },
+  };
 
-        <p className="text-gray-600 max-w-2xl mb-16">
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <section className="min-h-screen py-20 text-gray-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.h2
+          className="text-4xl font-semibold mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Skills
+        </motion.h2>
+
+        <motion.p
+          className="text-gray-600 max-w-2xl mb-12"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           Technologies and tools I use to build fast, clean, and maintainable
           applications.
-        </p>
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <SkillGroup
-            title="Languages"
-            skills={[
-              { name: "HTML" },
-              { name: "CSS" },
-              { name: "JavaScript" },
-              { name: "TypeScript" },
-              { name: "Python" },
-              { name: "Java" },
-              { name: "C++" },
-            ]}
-          />
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={container}
+        >
+          {/* Languages */}
+          <motion.div
+            className="bg-gray-200/10 backdrop-blur-xs rounded-xl shadow-md p-6 border border-gray-200"
+            variants={fadeInUp}
+          >
+            <SkillGroup
+              title="Languages"
+              skills={[
+                { name: "HTML" },
+                { name: "CSS" },
+                { name: "JavaScript" },
+                { name: "TypeScript" },
+                { name: "Python" },
+                { name: "Java" },
+                { name: "C++" },
+              ]}
+            />
+          </motion.div>
 
-          <SkillGroup
-            title="Frontend"
-            skills={[
-              { name: "React" },
-              { name: "Vite" },
-              { name: "React Router" },
-            ]}
-          />
+          {/* Frontend */}
+          <motion.div
+            className="bg-gray-200/10 backdrop-blur-xs rounded-xl shadow-md p-6 border border-gray-200"
+            variants={fadeInUp}
+          >
+            <SkillGroup
+              title="Frontend"
+              skills={[
+                { name: "React" },
+                { name: "Vite" },
+                { name: "React Router" },
+              ]}
+            />
+          </motion.div>
 
-          <SkillGroup
-            title="Styling & UI"
-            skills={[
-              { name: "Tailwind CSS" },
-              { name: "Responsive Design" },
-              { name: "UI Animation" },
-            ]}
-          />
+          {/* Styling & UI */}
+          <motion.div
+            className="bg-gray-200/10 backdrop-blur-xs rounded-xl shadow-md p-6 border border-gray-200"
+            variants={fadeInUp}
+          >
+            <SkillGroup
+              title="Styling & UI"
+              skills={[
+                { name: "Tailwind CSS" },
+                { name: "Responsive Design" },
+                { name: "UI Animation" },
+              ]}
+            />
+          </motion.div>
 
-          <SkillGroup
-            title="Tools & Workflow"
-            skills={[
-              { name: "Git" },
-              { name: "GitHub" },
-              { name: "NPM" },
-              { name: "Prettier" },
-            ]}
-          />
-        </div>
+          {/* Tools & Workflow */}
+          <motion.div
+            className="bg-gray-200/10 backdrop-blur-xs rounded-xl shadow-md p-6 border border-gray-200"
+            variants={fadeInUp}
+          >
+            <SkillGroup
+              title="Tools & Workflow"
+              skills={[
+                { name: "Git" },
+                { name: "GitHub" },
+                { name: "NPM" },
+                { name: "Prettier" },
+              ]}
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import bgAnimation from "../assets/lottie/network.json";
 
 export default function StaticLottieBackground() {
   return (
-    <div className="fixed inset-0 -z-10 bg-gray-200 opacity-10">
+    <div className="fixed inset-0 -z-10 bg-gray-400 opacity-30">
       <Lottie
         animationData={bgAnimation}
         loop

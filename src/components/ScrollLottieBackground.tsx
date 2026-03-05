@@ -31,8 +31,8 @@ export default function ScrollLottieBackground() {
 
   return (
     <div
-      className={`fixed inset-0 -z-10 transition-colors duration-300 opacity-10
-			${isScrolling ? "bg-gradient-to-tl from-gray-300 to-gray-50 " : "bg-gray-250"}`}
+      className={`fixed inset-0 -z-10 transition-colors duration-300 opacity-30
+			${isScrolling ? "bg-gray-100" : "bg-gray-600"}`}
     >
       <Lottie
         lottieRef={lottieRef}
