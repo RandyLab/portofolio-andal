@@ -7,35 +7,30 @@ import StaticLottieBackground from "../components/StaticLottieBackground";
 import ScrollLottieBackground from "../components/ScrollLottieBackground";
 
 export default function MainLayout({
-	children
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	// default: background lama (static)
-	const [useScrollBg, setUseScrollBg] = useState(false);
+  // default: background lama (static)
+  const [useScrollBg, setUseScrollBg] = useState(false);
 
-	return (
-		<div className="relative min-h-screen">
-			{/* Background */}
-			{useScrollBg ? (
-				<ScrollLottieBackground />
-			) : (
-				<StaticLottieBackground />
-			)}
+  return (
+    <div className="relative min-h-screen">
+      {useScrollBg ? <ScrollLottieBackground /> : <StaticLottieBackground />}
 
-			{/* Toggle */}
-			<ToggleBackground
-				enabled={useScrollBg}
-				onToggle={() => setUseScrollBg(prev => !prev)}
-			/>
+      {/* Toggle */}
+      <ToggleBackground
+        enabled={useScrollBg}
+        onToggle={() => setUseScrollBg((prev) => !prev)}
+      />
 
-			<Navbar />
+      <Navbar />
 
-			<main className="min-h-screen flex flex-col items-center">
-				{children}
-			</main>
+      <main className="min-h-screen flex flex-col items-center">
+        {children}
+      </main>
 
-			<Footer />
-		</div>
-	);
+      <Footer />
+    </div>
+  );
 }

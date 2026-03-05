@@ -13,32 +13,30 @@ import githubIcon from "/src/assets/Tools/github.svg";
 import npmIcon from "/src/assets/Tools/npm.svg";
 import viteIcon from "/src/assets/Tools/vite.svg";
 import prettierIcon from "/src/assets/Tools/prettier.svg";
+import tailwindIcon from "/src/assets/Tools/tailwind.svg";
 
 import reactIcon from "/src/assets/icons/react.svg";
 
 export const skillIcons: Record<string, string> = {
-	// Languages
-	HTML: htmlIcon,
-	CSS: cssIcon,
-	JavaScript: jsIcon,
-	TypeScript: tsIcon,
-	Python: pythonIcon,
-	Java: javaIcon,
-	"C++": cppIcon,
+  // Languages
+  HTML: htmlIcon,
+  CSS: cssIcon,
+  JavaScript: jsIcon,
+  TypeScript: tsIcon,
+  Python: pythonIcon,
+  Java: javaIcon,
+  "C++": cppIcon,
 
-	// Tools
-	Git: gitIcon,
-	GitHub: githubIcon,
-	NPM: npmIcon,
-	Vite: viteIcon,
-	Prettier: prettierIcon,
+  // Tools
+  Git: gitIcon,
+  GitHub: githubIcon,
+  NPM: npmIcon,
+  Vite: viteIcon,
+  Prettier: prettierIcon,
 
-	// Frameworks & Libraries
-	React: reactIcon,
-	"React Native": reactIcon,
-	"Next.js": reactIcon,
-	Tailwind:
-		"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-	"Tailwind CSS":
-		"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+  // Frameworks & Libraries
+  React: reactIcon,
+  "React Native": reactIcon,
+  "Next.js": reactIcon,
+  Tailwind: tailwindIcon,
 };
