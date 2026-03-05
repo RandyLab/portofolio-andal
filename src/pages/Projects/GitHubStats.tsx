@@ -1,82 +1,87 @@
 // src/pages/Projects/GitHubStats.tsx
 import React, { useState } from "react";
-import { BarChart3, TrendingUp, AlertCircle } from "lucide-react";
-import { profileData } from "../../data/profileData";
+import { BarChart3, TrendingUp } from "lucide-react";
+import { useInViewRepeat } from "../../utils/functions";
 
-const GitHubStats: React.FC = () => {
+interface GitHubStatsProps {
+	stats: {
+		apiUrl: string;
+		streakUrl: string;
+	};
+}
+
+const GitHubStats: React.FC<GitHubStatsProps> = ({ stats }) => {
+	const { triggerRef, visible } = useInViewRepeat();
 	const [apiError, setApiError] = useState(false);
 	const [streakError, setStreakError] = useState(false);
 
-	const handleImageError = (type: "api" | "streak") => {
-		if (type === "api") setApiError(true);
-		if (type === "streak") setStreakError(true);
-	};
-
 	return (
-		<section className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 mt-8">
-			<div className="flex items-center gap-3 mb-6">
-				<BarChart3 className="w-8 h-8 text-purple-400" />
-				<h3 className="text-2xl font-bold text-white">
+		<div ref={triggerRef}>
+			<div
+				className={`bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30 transition-all duration-700 ${
+					visible
+						? "opacity-100 translate-y-0"
+						: "opacity-0 translate-y-10"
+				}`}
+			>
+				<h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+					<BarChart3 className="w-8 h-8 text-purple-400" />
 					GitHub Statistics
-				</h3>
-			</div>
+				</h2>
 
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-				<div className="bg-gray-800/50 rounded-xl p-4">
-					<div className="flex items-center gap-2 mb-3">
-						<TrendingUp className="w-5 h-5 text-green-400" />
-						<h4 className="text-lg font-semibold text-white">
-							Stats Overview
-						</h4>
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+					{/* Stats Card */}
+					<div className="bg-gray-800/50 rounded-xl p-6">
+						<div className="flex items-center gap-2 mb-4">
+							<TrendingUp className="w-5 h-5 text-green-400" />
+							<h3 className="text-lg font-semibold text-white">
+								Stats Overview
+							</h3>
+						</div>
+
+						{!apiError ? (
+							<img
+								src={stats.apiUrl}
+								alt="GitHub Stats"
+								className="w-full rounded-lg"
+								onError={() => setApiError(true)}
+							/>
+						) : (
+							<div className="text-yellow-400 bg-yellow-400/10 p-4 rounded-lg text-center">
+								📊 Stats temporarily unavailable
+							</div>
+						)}
 					</div>
 
-					{apiError ? (
-						<div className="flex items-center gap-2 text-yellow-400 bg-yellow-400/10 p-4 rounded-lg">
-							<AlertCircle className="w-5 h-5" />
-							<p className="text-sm">
-								Stats temporarily unavailable
-							</p>
+					{/* Streak Card */}
+					<div className="bg-gray-800/50 rounded-xl p-6">
+						<div className="flex items-center gap-2 mb-4">
+							<TrendingUp className="w-5 h-5 text-purple-400" />
+							<h3 className="text-lg font-semibold text-white">
+								Contribution Streak
+							</h3>
 						</div>
-					) : (
-						<img
-							src={profileData.githubStats.apiUrl}
-							alt="GitHub Stats"
-							className="w-full rounded-lg"
-							onError={() => handleImageError("api")}
-						/>
-					)}
-				</div>
 
-				<div className="bg-gray-800/50 rounded-xl p-4">
-					<div className="flex items-center gap-2 mb-3">
-						<TrendingUp className="w-5 h-5 text-purple-400" />
-						<h4 className="text-lg font-semibold text-white">
-							Contribution Streak
-						</h4>
+						{!streakError ? (
+							<img
+								src={stats.streakUrl}
+								alt="GitHub Streak"
+								className="w-full rounded-lg"
+								onError={() => setStreakError(true)}
+							/>
+						) : (
+							<div className="text-yellow-400 bg-yellow-400/10 p-4 rounded-lg text-center">
+								🔥 Streak stats temporarily unavailable
+							</div>
+						)}
 					</div>
-
-					{streakError ? (
-						<div className="flex items-center gap-2 text-yellow-400 bg-yellow-400/10 p-4 rounded-lg">
-							<AlertCircle className="w-5 h-5" />
-							<p className="text-sm">
-								Streak stats temporarily unavailable
-							</p>
-						</div>
-					) : (
-						<img
-							src={profileData.githubStats.streakUrl}
-							alt="GitHub Streak"
-							className="w-full rounded-lg"
-							onError={() => handleImageError("streak")}
-						/>
-					)}
 				</div>
-			</div>
 
-			<p className="text-xs text-gray-500 mt-4 text-center">
-				*Stats include public contributions only
-			</p>
-		</section>
+				<p className="text-xs text-gray-500 mt-6 text-center">
+					*Stats include public contributions only
+				</p>
+			</div>
+		</div>
 	);
 };
 

@@ -1,4 +1,5 @@
-import SkillGroup from "/src/components/SkillGroup";
+// src/pages/Skills/Index.tsx
+import SkillGroup from "../../components/SkillGroup";
 
 export default function Skills() {
 	return (
@@ -17,33 +18,42 @@ export default function Skills() {
 					<SkillGroup
 						title="Languages"
 						skills={[
-							"HTML",
-							"CSS",
-							"JavaScript",
-							"TypeScript",
-							"Python",
-							"Java",
-							"C++"
+							{ name: "HTML" },
+							{ name: "CSS" },
+							{ name: "JavaScript" },
+							{ name: "TypeScript" },
+							{ name: "Python" },
+							{ name: "Java" },
+							{ name: "C++" }
 						]}
 					/>
 
 					<SkillGroup
 						title="Frontend"
-						skills={["React", "Vite", "React Router"]}
+						skills={[
+							{ name: "React" },
+							{ name: "Vite" },
+							{ name: "React Router" }
+						]}
 					/>
 
 					<SkillGroup
 						title="Styling & UI"
 						skills={[
-							"Tailwind CSS",
-							"Responsive Design",
-							"UI Animation"
+							{ name: "Tailwind CSS" },
+							{ name: "Responsive Design" },
+							{ name: "UI Animation" }
 						]}
 					/>
 
 					<SkillGroup
 						title="Tools & Workflow"
-						skills={["Git", "GitHub", "NPM", "Prettier"]}
+						skills={[
+							{ name: "Git" },
+							{ name: "GitHub" },
+							{ name: "NPM" },
+							{ name: "Prettier" }
+						]}
 					/>
 				</div>
 			</div>
