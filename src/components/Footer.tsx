@@ -13,7 +13,7 @@ export default function Footer() {
 	return (
 		<footer
 			className="place-items-center bg-gray-900 text-white pt-4 px-8
-		shadow-[0_-8px_20px_rgba(0,0,0,0.45)]"
+		shadow-[0_-2px_20px_rgba(0,0,0,0.45)]"
 		>
 			<div className="max-w-4xl">
 				<h3 className="judul-footer">About Me</h3>
