@@ -6,18 +6,18 @@ import MainLayout from "./layouts/MainLayout";
 import Contact from "./pages/Contact/Index";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <MainLayout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </MainLayout>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter basename="/portofolio-andal">
+			<MainLayout>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/projects" element={<Projects />} />
+					<Route path="/skills" element={<Skills />} />
+					<Route path="/contact" element={<Contact />} />
+				</Routes>
+			</MainLayout>
+		</BrowserRouter>
+	);
 }
 
 export default App;

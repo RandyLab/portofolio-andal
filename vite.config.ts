@@ -5,6 +5,6 @@ import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), svgr()],
-  base: '/portofolio-andal/'
+	base: "/portofolio-andal/",
+	plugins: [react(), tailwindcss(), svgr()]
 });
