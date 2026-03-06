@@ -1,6 +1,5 @@
 {
 	"name": "portofolio-andal",
-	"homepage": "https://RandyLab.github.io/portofolio-andal",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",

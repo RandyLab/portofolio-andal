@@ -18,9 +18,9 @@ import emailjs from "@emailjs/browser";
 // KONFIGURASI - MUDAH DIUBAH
 // ==============================================
 const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_4sx3prl",
-  TEMPLATE_ID: "template_yx3f9k8",
-  PUBLIC_KEY: "NVlkasvP3TD13Bso-",
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
 
 const RECIPIENT_EMAIL = "randibangun9@gmail.com";

@@ -7,7 +7,7 @@ import Contact from "./pages/Contact/Index";
 
 function App() {
 	return (
-		<BrowserRouter basename="/portofolio-andal">
+		<BrowserRouter>
 			<MainLayout>
 				<Routes>
 					<Route path="/" element={<Home />} />
