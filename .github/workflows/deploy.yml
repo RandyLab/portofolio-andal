@@ -3,8 +3,7 @@ name: Portofolio Andal
 on:
   push:
     branches:
-      - main   # pastikan sesuai branch default repo
-
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
