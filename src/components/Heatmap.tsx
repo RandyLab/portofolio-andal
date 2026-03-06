@@ -7,12 +7,11 @@ interface HeatmapProps {
 }
 
 export default function Heatmap({ username }: HeatmapProps) {
-	const [contributions, setContributions] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		// GitHub tidak menyediakan API publik untuk contributions heatmap
-		// Kita bisa menggunakan github-contributions-api atau menampilkan gambar dari github-readme-activity-graph
+		// Bisa pakai github-contributions-api atau gambar dari github-readme-activity-graph
 		setLoading(false);
 	}, [username]);
 
@@ -31,10 +30,9 @@ export default function Heatmap({ username }: HeatmapProps) {
 				</h3>
 			</div>
 
-			{/* Menggunakan gambar dari github-readme-activity-graph */}
 			<img
 				src={`https://github-readme-activity-graph.vercel.app/graph?username=${username}&theme=react-dark&hide_border=true&area=true`}
-				alt="GitHub Activity Graph"
+				alt={`GitHub activity graph for ${username}`}
 				className="w-full rounded-lg"
 				loading="lazy"
 			/>

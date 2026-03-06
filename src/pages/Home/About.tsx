@@ -1,11 +1,11 @@
 // src/pages/About/Index.tsx
-import { hitungUmur } from "/src/utils/functions";
-import randy from "/src/assets/img/randy.jpg";
+import { hitungUmur } from "../../utils/functions";
+import randy from "../../assets/img/randy.jpg";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import summary from "/src/assets/img/summary.png";
-import solving from "/src/assets/img/solving.png";
-import engineering from "/src/assets/img/engineering.png";
+import summary from "../../assets/img/summary.png";
+import solving from "../../assets/img/solving.png";
+import engineering from "../../assets/img/engineering.png";
 
 export default function About() {
 	const umur = hitungUmur("2007-11-08");
@@ -90,12 +90,13 @@ export default function About() {
 						className="grid md:grid-cols-2 gap-12 items-center"
 						variants={fadeInUp}
 					>
-						<img
+						<motion.img
 							src={summary}
 							alt="Summary illustration"
 							className="w-40 mx-auto opacity-90"
+							variants={fadeInUp}
 						/>
-						<div className="space-y-4">
+						<motion.div className="space-y-4" variants={fadeInUp}>
 							<h4 className="text-2xl font-semibold">Summary</h4>
 							<p className="text-gray-600">
 								I am a Software Engineer who focuses on building
@@ -104,12 +105,15 @@ export default function About() {
 								them maintainable, performant, and
 								production-ready.
 							</p>
-						</div>
+						</motion.div>
 					</motion.div>
 
 					{/* Problem Solving */}
-					<motion.div className="grid md:grid-cols-2 gap-12 items-center">
-						<div
+					<motion.div
+						className="grid md:grid-cols-2 gap-12 items-center"
+						variants={fadeInUp}
+					>
+						<motion.div
 							className="space-y-4 md:order-1 order-2"
 							variants={fadeInUp}
 						>
@@ -121,7 +125,7 @@ export default function About() {
 								requirements, designing a clear solution, and
 								implementing it with clean and efficient code.
 							</p>
-						</div>
+						</motion.div>
 						<motion.img
 							src={solving}
 							alt="Problem solving illustration"
@@ -135,12 +139,13 @@ export default function About() {
 						className="grid md:grid-cols-2 gap-12 items-center"
 						variants={fadeInUp}
 					>
-						<img
+						<motion.img
 							src={engineering}
 							alt="Principles illustration"
 							className="w-40 mx-auto opacity-80"
+							variants={fadeInUp}
 						/>
-						<div className="space-y-4">
+						<motion.div className="space-y-4" variants={fadeInUp}>
 							<h4 className="text-2xl font-semibold">
 								Engineering Principles
 							</h4>
@@ -162,7 +167,7 @@ export default function About() {
 									<p>proven workflows and patterns.</p>
 								</li>
 							</ul>
-						</div>
+						</motion.div>
 					</motion.div>
 				</motion.div>
 			</div>

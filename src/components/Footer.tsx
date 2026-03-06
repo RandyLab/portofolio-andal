@@ -5,16 +5,18 @@ import IconTiktok from "../assets/icons/tiktok_white.svg";
 import IconGithub from "../assets/icons/github_white.svg";
 
 import { NavLink } from "react-router-dom";
-import { getMenuItems } from "/src/utils/functions";
+import { getMenuItems } from "../utils/functions";
 
-const menuItems = getMenuItems();
+interface MenuItem {
+	path: string;
+	label: string;
+}
+
+const menuItems: MenuItem[] = getMenuItems();
 
 export default function Footer() {
 	return (
-		<footer
-			className="place-items-center bg-gray-900 text-white pt-4 px-8
-		shadow-[0_-2px_20px_rgba(0,0,0,0.45)]"
-		>
+		<footer className="place-items-center bg-gray-900 text-white pt-4 px-8 shadow-[0_-2px_20px_rgba(0,0,0,0.45)]">
 			<div className="max-w-4xl">
 				<h3 className="judul-footer">About Me</h3>
 				<div className="ml-2">
@@ -24,38 +26,28 @@ export default function Footer() {
 					</p>
 					<div className="flex gap-2 mt-1">
 						<a href="#">
-							<button>
-								<img src={IconFacebook} />
-							</button>
+							<img src={IconFacebook} alt="Facebook" />
 						</a>
 						<a href="#">
-							<button>
-								<img src={IconInstagram} />
-							</button>
+							<img src={IconInstagram} alt="Instagram" />
 						</a>
 						<a href="#">
-							<button>
-								<img src={IconTiktok} />
-							</button>
+							<img src={IconTiktok} alt="TikTok" />
 						</a>
 						<a href="#">
-							<button>
-								<img src={IconLinkedin} />
-							</button>
+							<img src={IconLinkedin} alt="LinkedIn" />
 						</a>
 						<a href="#">
-							<button>
-								<img src={IconGithub} />
-							</button>
+							<img src={IconGithub} alt="GitHub" />
 						</a>
 					</div>
 				</div>
+
 				<h3 className="judul-footer">Navigasi</h3>
 				<ul className="ml-2">
 					{menuItems.map(item => (
-						<li>
+						<li key={item.path}>
 							<NavLink
-								key={item.path}
 								to={item.path}
 								className={({ isActive }) =>
 									isActive
@@ -68,6 +60,7 @@ export default function Footer() {
 						</li>
 					))}
 				</ul>
+
 				<p className="text-center mt-4 pt-8 py-8 border-t-2 border-gray-400">
 					Copyright © 2026 RandyBgn. All rights reserved.
 				</p>

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import IconUtama from "../assets/icons/icon.svg";
 import IconMenu from "../assets/icons/menu.svg";
 import IconClose from "../assets/icons/close.svg";
-import { getMenuItems } from "/src/utils/functions";
+import { getMenuItems } from "../utils/functions";
 
 const menuItems = getMenuItems();
 
