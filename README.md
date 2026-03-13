@@ -2,13 +2,13 @@
 
 Website portofolio pribadi untuk menampilkan profil, skill, dan project yang pernah saya kerjakan.
 
-🔗 **Live Demo:** [Portofolio Andal Repository](https://github.com/RandyLab/portofolio-andal)
+🔗 **Live Demo:** [Portofolio Andal](https://portofoliobgn.netlify.app/)
+
 📂 **Repository:** [Portofolio Andal Repository](https://github.com/RandyLab/portofolio-andal)
 
 ---
 
 ## 📸 Preview
-![Preview Website](./assets/preview.png)
 
 ---
 
